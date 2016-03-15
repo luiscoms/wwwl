@@ -44,3 +44,66 @@ Now you are able to call the service, ie. using `curl`.
         ]
     }
     * Closing connection 0
+
+## API
+
+**Banner**
+----
+
+Retrieve a list of lunches
+
+* **URL**
+
+    /lunch
+
+* **Method:**
+
+    `GET`
+
+*  **URL Params**
+
+    **Required:**
+
+    `token=[string]`
+
+    **Optional:**
+
+    None
+
+* **Data Params**
+
+    None
+
+* **Success Response:**
+    * **Code:** 200
+
+          **Content:**
+```json
+{
+    "lunches": [
+        {
+            "date": "2016-03-16 00:00:00",
+            "place": "Nice restaurant"
+        }
+    ]
+}
+```
+
+* **Error Response:**
+    * **Code:** 401 UNAUTHORIZED
+
+          **Content:** `{ "error" :  "You are unauthorized to make this request." }`
+
+* **Sample Call:**
+
+    `curl 'http://localhost/lunch?token=6C68D2BD65CE5D6740CE71F302ECE364148311B6'`
+
+
+## Highlights
+
+* Container isolation using Docker
+* Better code formating using editorconfig
+
+## Improvements
+
+* Frontend site to be client for this API
