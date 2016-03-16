@@ -8,6 +8,8 @@ ADD requirements.txt /app/
 
 RUN pip install -r requirements.txt
 
+EXPOSE 80
+
 # ENTRYPOINT ["python"]
 
-CMD ["./app.py"]
+CMD ["./start.py"]

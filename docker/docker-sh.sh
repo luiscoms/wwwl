@@ -5,4 +5,4 @@ source ${CUR_DIR}/docker-config.sh
 
 PJ_ROOT=$(dirname ${CUR_DIR})
 
-docker build --force-rm -t ${DOCKER_FULLTAG} -f ${CUR_DIR}/Dockerfile ${PJ_ROOT}
+docker run --rm -it -p 80:80 -v ${PJ_ROOT}:/app ${DOCKER_FULLTAG} sh

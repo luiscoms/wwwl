@@ -1,7 +1,7 @@
 import unittest
 import base64
 # local imports
-from app import app
+from src import app
 import json
 
 
@@ -20,8 +20,7 @@ class LunchTestCase(unittest.TestCase):
 
         with app.test_client() as client:
             # rv = client.get('/lunches', None)
-            user_pass_bytes = bytes('username:password', 'ascii')
-            rv = self.request(client, '/lunches', 'username', 'password')
+            rv = self.request(client, '/lunches', 'hungryemployee', 'iamhungry')
 
         self.assertEqual(200, rv.status_code)
 

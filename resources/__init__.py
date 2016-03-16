@@ -1,1 +1,0 @@
-from resources.lunches import *
