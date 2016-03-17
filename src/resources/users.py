@@ -11,6 +11,11 @@ USERS = [
         'name': 'Hungry employee',
         'username': 'hungryemployee',
         'password_hash': pwd_context.encrypt('iamhungry')
+    },
+    {
+        'name': 'Hungry employee two',
+        'username': 'hungryemployeetwo',
+        'password_hash': pwd_context.encrypt('iamhungry')
     }
 ]
 

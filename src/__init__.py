@@ -47,6 +47,7 @@ def homepage():
 
 api.add_resource(Lunches, '/lunches', endpoint='lunches')
 api.add_resource(Lunch, '/lunches/<dt>', endpoint='lunch')
+api.add_resource(Votes, '/lunches/<dt>/votes', endpoint='votes')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
