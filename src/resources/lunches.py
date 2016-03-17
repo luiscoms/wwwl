@@ -3,26 +3,10 @@ from flask import request, g
 from flask.ext.restful import fields, inputs, marshal, marshal_with, Resource
 from flask.ext.httpauth import HTTPBasicAuth
 
-# import sys
-# sys.path.insert(0, '..')
-
-# from app import app
-# import src.resources.users
-# print(g.auth)
+# local imports
 from src import auth
-# print(dir(app))#.main.app)
-
-# print(app)
-
-# from app import homepage
 
 __all__ = ['Lunch', 'Lunches']
-
-
-# @auth.get_password
-# def get_password(username):
-#     return 'password'
-
 
 # parser = reqparse.RequestParser()
 # Look only in the POST body
@@ -44,6 +28,8 @@ LUNCHES = [
 
 
 class Lunch(Resource):
+    decorators = [auth.login_required]
+
     def get(self, dt):
         try:
             dt = inputs.date(dt)
