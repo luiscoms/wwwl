@@ -8,8 +8,9 @@ ADD requirements.txt /app/
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 8080
 
 # ENTRYPOINT ["python"]
+ENV PYTHONDONTWRITEBYTECODE 1
 
-CMD ["./start.py"]
+CMD ["./app.py"]
